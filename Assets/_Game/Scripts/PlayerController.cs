@@ -15,15 +15,18 @@ public class PlayerController : MonoBehaviour
     private Vector3 _offset;
     private float _distanceToPoint;
     public int score;
-    public float maxHealth = 10f;// hp
-    public float currectHealth;
+    public float maxHealth = 10f,minNoice = 0f,maxNoice=10f;
+    public float currectHealth,currectNoice;
 
     public WarmBar warmBar; 
+    public NoiceBar noiceBar;
 
     private void Start()// maxHp set
     {
         currectHealth = maxHealth;
+        currectNoice = 5f;
         warmBar.SetMaxHealth(maxHealth);
+        noiceBar.SetNoice(5f);
     }
     private void Update()
     {
@@ -44,14 +47,26 @@ public class PlayerController : MonoBehaviour
              transform.position = Vector3.MoveTowards(transform.position, objPosition, _distanceToPoint/_speed);
          }
          Freeze();
+         NoiceMetr();
          
 
          
     }
-    public void AddCoin(int cout)
+    public void AddCoin(int cout)//($_$)
     {
         score+=cout;
 
+    }
+
+    void NoiceMetr()//опускает шкалу шума
+    {
+        if(currectNoice > minNoice) 
+        {
+            if(currectNoice > maxNoice)
+                currectNoice = 10f;
+        currectNoice -= Time.deltaTime * 0.5f;
+        noiceBar.SetNoice(currectNoice);
+        }
     }
 
     void Freeze()//постоянный урон
@@ -66,9 +81,15 @@ public class PlayerController : MonoBehaviour
     {  
         if(currectHealth<maxHealth)
         {
-        currectHealth +=  0.2f;
+        currectHealth +=  0.1f;
         warmBar.SetHealth(currectHealth);
         }
+    }
+
+    public void NoiceUp(float power)//дамаг по ушам
+    {
+        currectNoice += power;
+        noiceBar.SetNoice(currectNoice);
     }
 
      
