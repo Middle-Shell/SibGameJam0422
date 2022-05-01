@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool _isButtonDown = false;
     private Vector3 _offset;
     private float _distanceToPoint;
+    public int score;
 
     private void Update()
     {
@@ -29,9 +30,16 @@ public class PlayerController : MonoBehaviour
              Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance); 
              Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
              _distanceToPoint = Vector3.Distance(transform.position, objPosition);
-             Debug.Log(_distanceToPoint/_speed);
+             
              transform.position = Vector3.MoveTowards(transform.position, objPosition, _distanceToPoint/_speed);
          }
+
+         
+    }
+    public void AddCoin(int cout)
+    {
+        score+=cout;
+
     }
     
 }
