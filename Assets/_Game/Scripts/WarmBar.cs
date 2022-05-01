@@ -12,7 +12,7 @@ public class WarmBar : MonoBehaviour
 
     public void SetMaxHealth(float health)
     {
-        Debug.Log("hey");
+        
         slider.maxValue = health;
         slider.value = health;
         //fill.color = gradient.Evaluate(1f);

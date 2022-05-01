@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private float _speed;
     [SerializeField]
     private bool _isButtonDown = false;
+    public bool hot = false;
     private Vector3 _offset;
     private float _distanceToPoint;
     public int score;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
              transform.position = Vector3.MoveTowards(transform.position, objPosition, _distanceToPoint/_speed);
          }
          Freeze();
+         
 
          
     }
@@ -53,9 +55,20 @@ public class PlayerController : MonoBehaviour
     }
 
     void Freeze()//постоянный урон
-    {
-        currectHealth -= Time.deltaTime * 0.1f;
+    {   
+        
+        currectHealth -= Time.deltaTime * 0.5f;
         warmBar.SetHealth(currectHealth);
+    
+    }
+
+    public void WarmHeal() // хил 
+    {  
+        if(currectHealth<maxHealth)
+        {
+        currectHealth +=  0.2f;
+        warmBar.SetHealth(currectHealth);
+        }
     }
 
      
