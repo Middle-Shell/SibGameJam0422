@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     private bool _isButtonDown = false;
     private Vector3 _offset;
     private Rigidbody2D _rb;
+    public int score;
+
     
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
             //transform.position = Camera.main.ScreenToWorldPoint(newPosition);
         }*/
     }
+    
     public float distance = 10f;
  
     void OnMouseDrag()
@@ -42,5 +45,10 @@ public class PlayerController : MonoBehaviour
         Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance); // переменной записываються координаты мыши по иксу и игрику
         Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition); // переменной - объекту присваиваеться переменная с координатами мыши
         transform.position = objPosition; // и собственно объекту записываються координаты
+    }
+
+    public void AddCoin(int cout)
+    {
+        score += cout;
     }
 }
