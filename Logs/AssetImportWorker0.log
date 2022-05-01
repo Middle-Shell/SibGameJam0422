@@ -531,3 +531,108 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007121 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\gameJam\SibGameJam0422\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory doesn't match image D:\gameJam\SibGameJam0422\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.917 seconds
+Domain Reload Profiling:
+	ReloadAssembly (918ms)
+		BeginReloadAssembly (121ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (705ms)
+			LoadAssemblies (95ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (210ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (302ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (65ms)
+				ProcessInitializeOnLoadAttributes (174ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.99 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4136 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (1.4 MB). Loaded Objects now: 4657.
+Memory consumption went from 165.7 MB to 164.3 MB.
+Total: 3.693300 ms (FindLiveObjects: 0.349200 ms CreateObjectMapping: 0.110200 ms MarkObjects: 2.501900 ms  DeleteObjects: 0.731000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1524.032412 seconds.
+  path: Assets/_Game/Prefabs/coin.prefab
+  artifactKey: Guid(c3918ae957abc7c4f80cc62766d744d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Prefabs/coin.prefab using Guid(c3918ae957abc7c4f80cc62766d744d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '548ce66476487a28f2e407db9475c5bd') in 0.078447 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/_Game/Prefabs/SavePoint.prefab
+  artifactKey: Guid(045558b5ce54d134887a22313751ff95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Prefabs/SavePoint.prefab using Guid(045558b5ce54d134887a22313751ff95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10abadf43ba42792f42c7423947f6419') in 0.014737 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/_Game/Prefabs/Player.prefab
+  artifactKey: Guid(ab68911114f1df942a83f129b196adb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Prefabs/Player.prefab using Guid(ab68911114f1df942a83f129b196adb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eac02d93424926626df7fc815d07c955') in 0.010564 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 256.586469 seconds.
+  path: Assets/_Game/Arts/0O7GcKK58_M.jpg
+  artifactKey: Guid(d27da4fdceab7a94e88008d10d8d9d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Arts/0O7GcKK58_M.jpg using Guid(d27da4fdceab7a94e88008d10d8d9d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24e5763cb946fc5210813b615089cfb8') in 0.081281 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Spine Examples/Spine Skeletons/spineboy-unity/Equips/gun-normal.png
+  artifactKey: Guid(602e098a046fa6e42a109d3e45c590f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine Examples/Spine Skeletons/spineboy-unity/Equips/gun-normal.png using Guid(602e098a046fa6e42a109d3e45c590f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc33d8adaaec9a47fc2dc574dfe3a024') in 0.067681 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Spine Examples/Images/outline-shaders-heading.png
+  artifactKey: Guid(de1fb4dac677a6d45ae2ad12a49091c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine Examples/Images/outline-shaders-heading.png using Guid(de1fb4dac677a6d45ae2ad12a49091c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e0af8d5d1aa387523a63301af74f599') in 0.090152 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Spine Examples/Spine Skeletons/square32.png
+  artifactKey: Guid(718074e4e56a5404e824bf8e6571ea7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine Examples/Spine Skeletons/square32.png using Guid(718074e4e56a5404e824bf8e6571ea7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8447da3ea59d84f04d81e2dc933c247e') in 0.085004 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
