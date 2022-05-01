@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/_Game/Scripts/Coin.cs.meta
+guid: beba693ccf0ce4b4e94c8fa53aba0c48
+=======
 guid: e0244e779d06aa24fa29b7e30841de44
+>>>>>>> 152352b43f7fa2f873f4346405b87abb53a1ce8c:Assets/_Game/Scripts/PlayerController.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
