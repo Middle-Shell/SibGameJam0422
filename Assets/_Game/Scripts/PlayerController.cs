@@ -14,7 +14,16 @@ public class PlayerController : MonoBehaviour
     private Vector3 _offset;
     private float _distanceToPoint;
     public int score;
+    public float maxHealth = 10f;// hp
+    public float currectHealth;
 
+    public WarmBar warmBar; 
+
+    private void Start()// maxHp set
+    {
+        currectHealth = maxHealth;
+        warmBar.SetMaxHealth(maxHealth);
+    }
     private void Update()
     {
          if (Input.GetMouseButtonDown(0))
@@ -33,6 +42,7 @@ public class PlayerController : MonoBehaviour
              
              transform.position = Vector3.MoveTowards(transform.position, objPosition, _distanceToPoint/_speed);
          }
+         Freeze();
 
          
     }
@@ -41,5 +51,13 @@ public class PlayerController : MonoBehaviour
         score+=cout;
 
     }
+
+    void Freeze()//постоянный урон
+    {
+        currectHealth -= Time.deltaTime * 0.1f;
+        warmBar.SetHealth(currectHealth);
+    }
+
+     
     
 }
