@@ -5,14 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - barrier
+  - segment
+  - snake
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Border
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

@@ -98,14 +98,14 @@ public class PlayerController : MonoBehaviour
     {   
         
         currectHealth -= Time.deltaTime * 0.5f;
-        warmBar.SetHealth(currectHealth);
+       warmBar.SetHealth(currectHealth);
     
     }
     public void WarmHeal() // хил 
     {  
         if(currectHealth<maxHealth)
         {
-        currectHealth +=  0.2f;
+        currectHealth +=  0.03f;
         warmBar.SetHealth(currectHealth);
         }
     }
