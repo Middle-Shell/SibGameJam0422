@@ -1,5 +1,4 @@
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class CameraFollow2D : MonoBehaviour
@@ -7,11 +6,11 @@ public class CameraFollow2D : MonoBehaviour
     [SerializeField] float damping = 1.5f;
     [SerializeField] Vector2 offset = new Vector2(2f, 1f);
     [SerializeField] bool faceLeft;
+    [SerializeField]
 	private Transform player;
 	private int lastX;
-
-    [SerializeField]
-    Camera cam;
+	[SerializeField]
+    private Camera cam;
     [SerializeField] float newSize;
     bool sizeIsChanged;
 
@@ -25,8 +24,9 @@ public class CameraFollow2D : MonoBehaviour
 
     void Start ()
     {
+	    transform.position = new Vector3(transform.position.x+20, transform.position.y+20, -50f);
         numCristals = 0;
-       // txt.text = "";
+        //txt.text = "";
          
         //cam = GetComponent<Camera>();
         offset = new Vector2(Mathf.Abs(offset.x), offset.y);
@@ -35,7 +35,7 @@ public class CameraFollow2D : MonoBehaviour
 
 	public void FindPlayer(bool playerFaceLeft)
 	{
-		player = GameObject.FindGameObjectWithTag("Player").transform;
+		//player = GameObject.FindGameObjectWithTag("Player").transform;
 		lastX = Mathf.RoundToInt(player.position.x);
 
         Vector2 pp = player.position;
