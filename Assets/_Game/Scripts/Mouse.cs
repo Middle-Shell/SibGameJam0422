@@ -25,18 +25,26 @@ public class Mouse : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D col)
     {
-        StartCoroutine(NoiceCoroutine(col.GetComponent<NoiceMechanics>()));
+        if (col.tag == "Player" || col.tag == "segment")
+        {
+            StartCoroutine(NoiceCoroutine(col.GetComponent<NoiceMechanics>()));
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        StopAllCoroutines();
+        if (collision.tag == "Player" || collision.tag == "segment")
+        {
+            StopAllCoroutines();
+        }
+        
     }
     IEnumerator NoiceCoroutine(NoiceMechanics pl=null)
     {
         while(true)
         {
-            yield return new WaitForSeconds(0.005f); 
+            yield return new WaitForSeconds(0.5f); 
             Debug.Log("123");
             NoiceMechanics.instance.NoiceUp(_power);
         }
