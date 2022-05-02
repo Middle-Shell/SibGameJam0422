@@ -69,9 +69,9 @@ public class PlayerController : MonoBehaviour
              _distanceToPoint = Vector3.Distance(transform.position, objPosition);
              
              velocity = new Vector2((objPosition.x-transform.position.x>0?1f:-1f)*_distanceToPoint/_speed, (objPosition.y-transform.position.y>0?1f:-1f)*_distanceToPoint/_speed);
-             Debug.Log(objPosition.x);
-             Debug.Log(transform.position.x);
-             Debug.Log(objPosition.x-transform.position.x);
+            //  Debug.Log(objPosition.x);
+            //  Debug.Log(transform.position.x);
+            //  Debug.Log(objPosition.x-transform.position.x);
              rb2D.MovePosition(rb2D.position + velocity * Time.fixedDeltaTime);
              
              Vector3 mousePos = Input.mousePosition;
@@ -144,14 +144,14 @@ public class PlayerController : MonoBehaviour
     {   
         
         currectHealth -= Time.deltaTime * 0.5f;
-        warmBar.SetHealth(currectHealth);
+       warmBar.SetHealth(currectHealth);
     
     }
     public void WarmHeal() // хил 
     {  
         if(currectHealth<maxHealth)
         {
-        currectHealth +=  0.2f;
+        currectHealth +=  0.03f;
         warmBar.SetHealth(currectHealth);
         }
     }
