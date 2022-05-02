@@ -10,7 +10,7 @@ public class Mouse : MonoBehaviour
     [SerializeField]
     private float _walkSpeedY;
     [SerializeField]
-    private float _power = 5f;
+    private float _power = 0.001f;
 
     private void Update()
     {
@@ -25,20 +25,29 @@ public class Mouse : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D col)
     {
+        
+        if(col.tag == "Player")
+        {
         StartCoroutine(NoiceCoroutine(col.GetComponent<NoiceMechanics>()));
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if(collision.tag == "Player")
+        {
+        Debug.Log("adsfsdhgdfhfvhndfgdfhdhdr");
         StopAllCoroutines();
+        }
     }
     IEnumerator NoiceCoroutine(NoiceMechanics pl=null)
     {
         while(true)
         {
-            yield return new WaitForSeconds(0.005f); 
-            Debug.Log("123");
             NoiceMechanics.instance.NoiceUp(_power);
+            yield return new WaitForSeconds(0.5f); 
+            Debug.Log("123");
+            
         }
     }
     

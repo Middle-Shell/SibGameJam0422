@@ -8,11 +8,13 @@ public class NoiceMechanics : MonoBehaviour
 {
      
     // HP now
+    public NoiceBar test;
     public static NoiceMechanics instance = null;
-    public static NoiceBar noiceBar;
+    public  static NoiceBar noiceBar;
     // Start is called before the first frame update
     void Start()
     {
+        noiceBar = test;
         if (instance == null)
         {
             instance = this;
