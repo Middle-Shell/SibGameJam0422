@@ -9,19 +9,19 @@ public class savePoint : MonoBehaviour
     private bool fPress,savePointCh=false;
 
      
-     void Update()
-     {
-         if(Input.GetKeyDown("f"))
-            { savePointCh = !savePointCh;}
-        if(savePointCh==false)
-            {StopAllCoroutines();}
-     }
+    //  void Update()
+    //  {
+    //      if(Input.GetKeyDown("f"))
+    //         { savePointCh = !savePointCh;}
+    //     if(savePointCh==false)
+    //         {StopAllCoroutines();}
+    //  }
    
     private void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("heeeeeey");
         StopCoroutine(HealCoroutine());
-        if(collision.tag == "Player" && savePointCh==true)
+        if(collision.tag == "Player") //&& savePointCh==true)
         {   
             
             // _player = GetComponent<PlayerController>();
