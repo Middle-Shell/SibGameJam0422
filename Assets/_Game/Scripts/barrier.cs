@@ -5,7 +5,7 @@ using UnityEngine;
 public class barrier : MonoBehaviour
 {
     [SerializeField]
-    private float Npower = 1f;
+    private float Npower = 0.1f;
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "segment")
@@ -15,13 +15,9 @@ public class barrier : MonoBehaviour
     }
     void OnCollisionStay2D(Collision2D collision)
     {
-           
-    
         if(collision.gameObject.tag == "Player" )
         {
             NoiceMechanics.instance.NoiceUp(Npower);
-            
-            
         }
     
 }

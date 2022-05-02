@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,11 @@ public class Mouse : MonoBehaviour
     [SerializeField]
     private float _walkSpeedY;
     [SerializeField]
-    private float _power = 0.001f;
+    private float _power = 5f;
+    [SerializeField]
+    private float _timeRepeat = 0.2f;
+
+    private bool _start = false;
 
     private void Update()
     {
@@ -26,28 +31,32 @@ public class Mouse : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         
-        if(col.tag == "Player")
-        {
-        StartCoroutine(NoiceCoroutine(col.GetComponent<NoiceMechanics>()));
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player" )
         {
-        Debug.Log("adsfsdhgdfhfvhndfgdfhdhdr");
-        StopAllCoroutines();
+            StopAllCoroutines();
+            _start = !_start;
         }
     }
-    IEnumerator NoiceCoroutine(NoiceMechanics pl=null)
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Player" && !_start)
+        {
+            StartCoroutine(NoiceCoroutine());
+            _start = !_start;
+        }
+    }
+
+    IEnumerator NoiceCoroutine()
     {
         while(true)
         {
+            yield return new WaitForSeconds(_timeRepeat); 
             NoiceMechanics.instance.NoiceUp(_power);
-            yield return new WaitForSeconds(0.5f); 
-            Debug.Log("123");
-            
         }
     }
     
