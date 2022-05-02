@@ -17,7 +17,6 @@ public class SegmentController : MonoBehaviour
     }
 
     void Update(){
-        Debug.Log(this.name);
         Vector3 deltaPos = idolTransform.position - prewPos;
         Vector3 deltaRot = (idolTransform.rotation.eulerAngles - prewRot) * Mathf.Deg2Rad;
        

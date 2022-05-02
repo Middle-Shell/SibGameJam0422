@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 190692151142769457}
   m_Layer: 0
   m_Name: Snake
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1271,7 +1271,13 @@ MonoBehaviour:
   distance: 10
   _speed: 200
   _isButtonDown: 0
+  hot: 0
   score: 0
+  maxHealth: 10
+  minNoice: 0
+  maxNoice: 10
+  currectHealth: 0
+  currectNoice: 0
   parts:
   - {fileID: 6771529712892349406}
   - {fileID: 6771529714685607476}
@@ -1283,3 +1289,5 @@ MonoBehaviour:
   - {fileID: 190692150860458094}
   - {fileID: 190692150540846407}
   coof: 14
+  warmBar: {fileID: 0}
+  noiceBar: {fileID: 0}
