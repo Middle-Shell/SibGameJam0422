@@ -47,7 +47,6 @@ public class NoiceMechanics : MonoBehaviour
     }
     public void NoiceUp(float power)//дамаг по ушам
     {
-        Debug.Log("Ahtung");
         noiceBar.currectNoice += power;
         noiceBar.SetNoice(noiceBar.currectNoice);
     }
