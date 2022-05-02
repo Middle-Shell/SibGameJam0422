@@ -6,11 +6,11 @@ public class barrier : MonoBehaviour
 {
     [SerializeField]
     private float Npower = 1f;
-        void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "segment")
         {
-            collision.gameObject.GetComponent<NoiceMechanics>().NoiceUp(Npower);
+            NoiceMechanics.instance.NoiceUp(Npower);
         }
     }
     void OnCollisionStay2D(Collision2D collision)
@@ -19,7 +19,7 @@ public class barrier : MonoBehaviour
     
         if(collision.gameObject.tag == "Player" )
         {
-            collision.gameObject.GetComponent<NoiceMechanics>().NoiceUp(Npower);
+            NoiceMechanics.instance.NoiceUp(Npower);
             
             
         }

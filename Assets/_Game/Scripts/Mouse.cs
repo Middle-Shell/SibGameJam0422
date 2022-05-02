@@ -1,44 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Mouse : MonoBehaviour
 {
+    [SerializeField]
+    private float _walkSpeedX;
+    [SerializeField]
+    private float _walkSpeedY;
+    [SerializeField]
+    private float _power = 5f;
 
-    public float power  =5f;
-    // Start is called before the first frame update
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        Debug.Log("heeeeeey");
-        if(collision.tag == "Player")
-        {   
-            
-            // _player = GetComponent<PlayerController>();
-
-            //InvokeRepeating("WarmHeal",1f,0.3f);
-           StartCoroutine(NoiceCoroutine(collision.GetComponent<NoiceMechanics>()));
-            //Debug.Log("asdf");
-            //collision.GetComponent<PlayerController>().WarmHeal();
-        }
+        transform.position += new Vector3(_walkSpeedX * Time.deltaTime, _walkSpeedY * Time.deltaTime, 0f);
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        _walkSpeedX *= -1;
+        _walkSpeedY *= -1;
+    }
+    
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        StartCoroutine(NoiceCoroutine(col.GetComponent<NoiceMechanics>()));
     }
 
-        IEnumerator NoiceCoroutine(NoiceMechanics pl=null)
-            {
-                while(true)
-	            {
-                pl.NoiceUp(power); 
-                Debug.Log("123");
-
-                yield return new WaitForSeconds(0.05f); 
-                
-                }
-            }
-
     private void OnTriggerExit2D(Collider2D collision)
-      {
-          
-         StopAllCoroutines();
-      }
+    {
+        StopAllCoroutines();
+    }
+    IEnumerator NoiceCoroutine(NoiceMechanics pl=null)
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(0.005f); 
+            Debug.Log("123");
+            NoiceMechanics.instance.NoiceUp(_power);
+        }
+    }
+    
 
 }
 
