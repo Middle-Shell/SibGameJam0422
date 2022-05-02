@@ -166,7 +166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _walkSpeedX: 5
   _walkSpeedY: 0
-  _power: 5
+  _power: 0.5
+  _timeRepeat: 0.05
 --- !u!114 &4113151217099414586
 MonoBehaviour:
   m_ObjectHideFlags: 0
