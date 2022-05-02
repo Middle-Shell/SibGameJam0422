@@ -8,12 +8,18 @@ public class NoiceMechanics : MonoBehaviour
 {
      
     // HP now
-
-    public  NoiceBar noiceBar;
+    public static NoiceMechanics instance = null;
+    public static NoiceBar noiceBar;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+        } else if (instance = this)
+        {
+            Destroy(gameObject);
+        }
         noiceBar.currectNoice = 0f;
         
         noiceBar.SetNoice(0f);
@@ -22,7 +28,6 @@ public class NoiceMechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
          NoiceMetr();
     }
 
@@ -38,13 +43,9 @@ public class NoiceMechanics : MonoBehaviour
         noiceBar.SetNoice(noiceBar.currectNoice);
         }
     }
-
-    
-
-    
-
-    public  void NoiceUp(float power)//дамаг по ушам
+    public void NoiceUp(float power)//дамаг по ушам
     {
+        Debug.Log("Ahtung");
         noiceBar.currectNoice += power;
         noiceBar.SetNoice(noiceBar.currectNoice);
     }
