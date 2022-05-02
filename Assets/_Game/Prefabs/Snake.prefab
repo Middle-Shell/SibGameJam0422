@@ -1271,7 +1271,6 @@ MonoBehaviour:
   distance: 10
   _speed: 200
   _isButtonDown: 0
-  score: 0
   parts:
   - {fileID: 6771529712892349406}
   - {fileID: 6771529714685607476}
@@ -1283,3 +1282,7 @@ MonoBehaviour:
   - {fileID: 190692150860458094}
   - {fileID: 190692150540846407}
   coof: 14
+  warmBar: {fileID: 0}
+  currectHealth: 0
+  maxHealth: 10
+  score: 0

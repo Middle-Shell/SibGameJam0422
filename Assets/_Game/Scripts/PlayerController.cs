@@ -6,18 +6,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    
+
     [SerializeField]
     private float distance = 10f;
     [SerializeField]
     private float _speed;
     [SerializeField]
     private bool _isButtonDown = false;
-    public bool hot = false;
+    
     private Vector3 _offset;
     private float _distanceToPoint;
-    public int score;
-    public float maxHealth = 10f,minNoice = 0f,maxNoice=10f;
-    public float currectHealth,currectNoice;
+   
     [SerializeField]    
     List<GameObject> parts = new List<GameObject>();
     [SerializeField] 
@@ -26,16 +27,24 @@ public class PlayerController : MonoBehaviour
     public float coof = 1;
 
     float currentRotation = 0.0f;
-
     public WarmBar warmBar; 
-    public NoiceBar noiceBar;
+    
+    public int score;
+    public float maxHealth = 10f; // min max
+     public float currectHealth;
+    
+    
+
+//_______________________________________________________________________________________________________________________________________________________
+
+
+
 
     private void Start()// maxHp set
     {
-        currectHealth = maxHealth;
-        currectNoice = 5f;
-        warmBar.SetMaxHealth(maxHealth);
-        noiceBar.SetNoice(5f);
+       currectHealth = maxHealth;
+       warmBar.SetHealth(maxHealth);
+	
     }
     private void Update()
     {
@@ -72,7 +81,6 @@ public class PlayerController : MonoBehaviour
 
          }
          Freeze();
-         NoiceMetr();
          
 
          
@@ -101,24 +109,11 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(.05f);
         }
     }
-    
     public void AddCoin(int cout)
     {
         score+=cout;
 
     }
-
-    void NoiceMetr()//опускает шкалу шума
-    {
-        if(currectNoice > minNoice) 
-        {
-            if(currectNoice > maxNoice)
-                currectNoice = 10f;
-        currectNoice -= Time.deltaTime * 0.5f;
-        noiceBar.SetNoice(currectNoice);
-        }
-    }
-
     void Freeze()//постоянный урон
     {   
         
@@ -126,20 +121,13 @@ public class PlayerController : MonoBehaviour
         warmBar.SetHealth(currectHealth);
     
     }
-
     public void WarmHeal() // хил 
     {  
         if(currectHealth<maxHealth)
         {
-        currectHealth +=  0.1f;
+        currectHealth +=  0.2f;
         warmBar.SetHealth(currectHealth);
         }
-    }
-
-    public void NoiceUp(float power)//дамаг по ушам
-    {
-        currectNoice += power;
-        noiceBar.SetNoice(currectNoice);
     }
 
      

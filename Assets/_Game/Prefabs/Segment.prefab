@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6871428591999428089}
   - component: {fileID: 6871428591999428088}
   - component: {fileID: 6871428591999428091}
+  - component: {fileID: 1175588689607484247}
   - component: {fileID: 6768246821878803744}
   - component: {fileID: 6871428591999428037}
   - component: {fileID: 2588537139267227166}
@@ -109,6 +110,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1175588689607484247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871428591999428094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc70dfb152d5a14aafb8b3f1de49d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minNoice: 0
+  maxNoice: 10
+  currectNoice: 0
+  noiceBar: {fileID: 0}
 --- !u!114 &6768246821878803744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,11 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c913ba8cac9a48a43845eef5e661b86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 10
-  _size: 0
-  _speed: 0
-  _forwardSegment: {fileID: 0}
-  _rb: {fileID: 6871428591999428091}
+  idolTransform: {fileID: 0}
 --- !u!61 &6871428591999428037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -169,5 +182,5 @@ DistanceJoint2D:
   m_Anchor: {x: -0.00000003243953, y: 0.000000093548735}
   m_ConnectedAnchor: {x: -0.00000003243953, y: 0.00000009840589}
   m_AutoConfigureDistance: 1
-  m_Distance: 10.759803
+  m_Distance: 9.780041
   m_MaxDistanceOnly: 1
