@@ -104,6 +104,11 @@ public class PlayerController : MonoBehaviour
         score+=cout;
 
     }
+    public void ColdDeath()
+    {
+        currectHealth -= 0.3f;
+        warmBar.SetHealth(currectHealth);
+    }
     void Freeze()//постоянный урон
     {   
         
