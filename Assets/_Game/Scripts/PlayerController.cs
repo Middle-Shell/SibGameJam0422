@@ -33,13 +33,7 @@ public class PlayerController : MonoBehaviour
     public float maxHealth = 10f; // min max
     public float currectHealth;
 
-    [SerializeField] private GameObject _ring;
-    [SerializeField] private GameObject _battery;
-    private bool _isBattery = false;
-    [SerializeField] private List<GameObject> Bears = new List<GameObject>();
-    [SerializeField] private GameObject SocketOff;
-    [SerializeField] private GameObject SocketOn;
-
+    
 //_______________________________________________________________________________________________________________________________________________________
 
     
@@ -103,38 +97,7 @@ public class PlayerController : MonoBehaviour
          
     }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (Input.GetKeyDown("f"))
-        {
-            if (other.tag == "BatteryTake")
-            {
-
-                _battery.SetActive(true);
-                other.gameObject.GetComponent<AudioSource>().Stop();
-                _isBattery = true;
-            }
-
-            if (other.tag == "Clock")
-            {
-                if (_isBattery)
-                {
-                    _battery.SetActive(false);
-                    other.gameObject.GetComponent<AudioSource>().Play();
-                    //затемнение
-                    Bears[0].SetActive(false);
-                    Bears[1].SetActive(true);
-                    AudioManager.instance.PlaySound("Bear1Move");
-                }
-            }
-
-            if (other.tag == "Socket")
-            {
-                SocketOff.SetActive(true);
-                SocketOn.SetActive(false);
-            }
-        }
-    }
+    
 
     public void AddCoin(int cout)
     {

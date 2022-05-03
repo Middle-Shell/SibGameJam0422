@@ -7,6 +7,12 @@ TagManager:
   - barrier
   - segment
   - snake
+  - BatteryTake
+  - Clock
+  - Socket
+  - Bed
+  - Bear
+  - Ring
   layers:
   - Default
   - TransparentFX
