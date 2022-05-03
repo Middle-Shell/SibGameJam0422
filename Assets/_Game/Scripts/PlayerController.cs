@@ -6,9 +6,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
-    
-
     [SerializeField]
     private float distance = 10f;
     [SerializeField]
@@ -35,7 +32,9 @@ public class PlayerController : MonoBehaviour
     public int score;
     public float maxHealth = 10f; // min max
     public float currectHealth;
-    
+
+    [SerializeField] private GameObject _ring;
+    [SerializeField] private GameObject _battery;
     
 
 //_______________________________________________________________________________________________________________________________________________________
@@ -57,6 +56,10 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown("f"))
+        {
+            
+        }
          if (Input.GetMouseButtonDown(0))
          {
              _isButtonDown = true;
