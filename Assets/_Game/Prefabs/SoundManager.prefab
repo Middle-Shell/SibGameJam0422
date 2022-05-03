@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2208554568541985055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2208554568541985049}
+  - component: {fileID: 2208554568541985048}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2208554568541985049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208554568541985055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.83159, y: 3.0704784, z: -4.115645}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2208554568541985048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208554568541985055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59fcf675078baa04bbbb8cbf4afef921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Col1
+    clip: {fileID: 8300000, guid: 635e36c3c44bab041b5bef67f6d5b05f, type: 3}
+    volume: 0.4
+    pitch: 0.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Col2
+    clip: {fileID: 8300000, guid: 8efd9454815c296409b96c638dc41dbf, type: 3}
+    volume: 0.4
+    pitch: 0.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Col3
+    clip: {fileID: 8300000, guid: 96e226bc9e726484ba27aa14a92a70ea, type: 3}
+    volume: 0.4
+    pitch: 0.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Col4
+    clip: {fileID: 8300000, guid: 9574fc99129fb5d4ebb0ed3708676636, type: 3}
+    volume: 0.4
+    pitch: 0.5
+    source: {fileID: 0}
+    loop: 0
+  - name: Col5
+    clip: {fileID: 8300000, guid: fc3e63b704be8654bb1edb9364910c4b, type: 3}
+    volume: 0.4
+    pitch: 0.5
+    source: {fileID: 0}
+    loop: 0
+  playlist:
+  - name: Noir
+    clip: {fileID: 8300000, guid: 95cb27bbe573f354ea1947e8feda66ec, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: SnowStorm
+    clip: {fileID: 8300000, guid: 66b27ec0f67e0f14db4e24c5eedbd432, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0

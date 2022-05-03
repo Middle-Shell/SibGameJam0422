@@ -1,5 +1,5 @@
 
-2.png
+mouse.png
 size: 605,277
 format: RGBA8888
 filter: Linear,Linear

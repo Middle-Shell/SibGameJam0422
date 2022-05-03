@@ -15,15 +15,29 @@ public class Mouse : MonoBehaviour
     private float _power = 5f;
     [SerializeField]
     private float _timeRepeat = 0.2f;
+
+    [SerializeField] private string _status; //Walking - идёт, EATING - стоит/есть и всё что не двигается
+    
+    [SerializeField] private List<AudioClip> _clips = new List<AudioClip>();
     public SkeletonAnimation skeletonAnimation;
+    [SerializeField]
     private bool move = true;
+    [SerializeField]
+    private AudioSource _audioSource;
+    
     
     private bool _start = false;
 
     private void Update()
     {
-        if(move)
+        if (move)
+        {
             transform.position += new Vector3(_walkSpeedX * Time.deltaTime, _walkSpeedY * Time.deltaTime, 0f);
+            _audioSource.loop = true;
+            _audioSource.clip = _clips[1];
+            _audioSource.pitch = 1;
+            _audioSource.Play();
+        }
     }
     
     void OnCollisionEnter2D(Collision2D collision)
@@ -45,7 +59,14 @@ public class Mouse : MonoBehaviour
         {
             StopAllCoroutines();
             _start = !_start;
-            skeletonAnimation.AnimationName = "Walking";
+            if (_status == "Walking")
+            {
+                skeletonAnimation.AnimationName = "Walking";
+            }
+            else
+            {
+                skeletonAnimation.AnimationName = "EATING";
+            }
             move = true;
         }
     }
@@ -55,6 +76,10 @@ public class Mouse : MonoBehaviour
         if (other.tag == "Player" && !_start)
         {
             skeletonAnimation.AnimationName = "Scream proceed";
+            _audioSource.loop = true;
+            _audioSource.pitch = 3;
+            _audioSource.clip = _clips[0];
+            _audioSource.Play();
             StartCoroutine(NoiceCoroutine());
             move = false;
             _start = !_start;

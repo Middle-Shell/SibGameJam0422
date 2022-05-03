@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 3137727547836278789}
   - component: {fileID: 3137727547836278786}
   - component: {fileID: 3137727547836278787}
+  - component: {fileID: 8768505607184764008}
   m_Layer: 0
   m_Name: Segment
   m_TagString: Player
@@ -264,6 +265,14 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 0.84469086
   m_MaxDistanceOnly: 1
+--- !u!81 &8768505607184764008
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3137727547836278785}
+  m_Enabled: 1
 --- !u!1 &3137727547978179279
 GameObject:
   m_ObjectHideFlags: 0
