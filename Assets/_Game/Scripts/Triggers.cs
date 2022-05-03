@@ -35,6 +35,7 @@ public class Triggers : MonoBehaviour
                     _battery.SetActive(false);
                     other.gameObject.GetComponent<AudioSource>().Play();
                     //затемнение
+                    BlackScreen.instance.Blackscreen();
                     Bears[1].SetActive(false);
                     Bears[2].SetActive(true);
                     AudioManager.instance.PlaySound("Bear3");
@@ -54,6 +55,7 @@ public class Triggers : MonoBehaviour
             {
                 //печенье тру
                 //Cookie.SetActive(true);
+                BlackScreen.instance.Blackscreen();
                 CookieOnBed.SetActive(false);
                 mouses.SetActive(true);
                 mousesArray[0].SetActive(false);
@@ -65,6 +67,7 @@ public class Triggers : MonoBehaviour
             {
                 if (mouses.activeSelf)
                 {
+                    BlackScreen.instance.Blackscreen();
                     Bears[0].SetActive(false);
                     Bears[1].SetActive(true);
                     AudioManager.instance.PlaySound("Bear1");
@@ -80,8 +83,9 @@ public class Triggers : MonoBehaviour
                 
             }
         }
-        if (other.tag == "Exit" || _ring.activeSelf)
+        if (other.tag == "Exit" && _ring.activeSelf)
         {
+            BlackScreen.instance.Blackscreen();
             SceneManager.LoadScene(0);
         }
     }

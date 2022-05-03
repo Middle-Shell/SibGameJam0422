@@ -30,28 +30,34 @@ public class BlackScreen : MonoBehaviour
     }
         void Update ()
         {
-            Blackscreen();
+            //Blackscreen();
         }
         
     
 
     public void Blackscreen()
     {
-        
+        AImage = AlphaObj.GetComponent<Image>();
         if(AlphaA==true)
         {
-            AImage = AlphaObj.GetComponent<Image>();
-            AImage.color = new Color(AImage.color.r ,AImage.color.g, AImage.color.b,AImage.color.a+0.5f*Time.deltaTime);
-            if(AImage.color.a >=1.0f)
-                AlphaA=false;
+            while (AImage.color.a < 1.0f)
+            {
+                
+                AImage.color = new Color(AImage.color.r, AImage.color.g, AImage.color.b,
+                    AImage.color.a + 0.5f * Time.deltaTime);
+            }
+            AlphaA=false;
+                
             
         }
         if(AlphaA==false)
         {
-            AImage = AlphaObj.GetComponent<Image>();
-            AImage.color = new Color(AImage.color.r ,AImage.color.g, AImage.color.b,AImage.color.a-0.5f*Time.deltaTime);
-            if(AImage.color.a <=0.0f)
-                AlphaA=true;
+            while (AImage.color.a > 0f)
+            {
+                AImage.color = new Color(AImage.color.r, AImage.color.g, AImage.color.b,
+                    AImage.color.a - 0.5f * Time.deltaTime);
+            }
+            AlphaA=true;
             
             
         }
