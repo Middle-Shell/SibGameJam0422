@@ -71,8 +71,8 @@ public class AudioManager : MonoBehaviour {
             shouldPlayMusic = true;
             // pick a random song from our playlist
             currentPlayingIndex = UnityEngine.Random.Range(0, playlist.Length - 1);
-            playlist[currentPlayingIndex].source.volume = playlist[0].volume * mvol; // set the volume
-            playlist[currentPlayingIndex].source.Play(); // play it
+            //playlist[currentPlayingIndex].source.volume = playlist[0].volume * mvol; // set the volume
+            //playlist[currentPlayingIndex].source.Play(); // play it
         }
 
     }
