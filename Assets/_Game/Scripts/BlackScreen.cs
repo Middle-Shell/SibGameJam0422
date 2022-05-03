@@ -37,14 +37,26 @@ public class BlackScreen : MonoBehaviour
 
     public void Blackscreen()
     {
-        if(Input.GetKey(KeyCode.A))
-        {
+        
         if(AlphaA==true)
         {
             AImage = AlphaObj.GetComponent<Image>();
-            AImage.color = new Color (AImage.color.r , AImage.color.b,AImage.color.a*0.5f*Time.deltaTime);
+            AImage.color = new Color(AImage.color.r ,AImage.color.g, AImage.color.b,AImage.color.a+0.5f*Time.deltaTime);
+            if(AImage.color.a >=1.0f)
+                AlphaA=false;
+            
         }
+        if(AlphaA==false)
+        {
+            AImage = AlphaObj.GetComponent<Image>();
+            AImage.color = new Color(AImage.color.r ,AImage.color.g, AImage.color.b,AImage.color.a-0.5f*Time.deltaTime);
+            if(AImage.color.a <=0.0f)
+                AlphaA=true;
+            
+            
         }
+
+        
     }
 
 }
