@@ -9,7 +9,7 @@ public class BearController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        skeletonAnimation.AnimationName = "bear1_idle";
+        //skeletonAnimation.AnimationName = "bear1_idle";
     }
 
     // Update is called once per frame
