@@ -6,9 +6,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
-    
-
     [SerializeField]
     private float distance = 10f;
     [SerializeField]
@@ -35,12 +32,11 @@ public class PlayerController : MonoBehaviour
     public int score;
     public float maxHealth = 10f; // min max
     public float currectHealth;
-    
-    
 
+    
 //_______________________________________________________________________________________________________________________________________________________
 
-
+    
 
 
     
@@ -57,6 +53,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        
          if (Input.GetMouseButtonDown(0))
          {
              _isButtonDown = true;
@@ -99,6 +96,9 @@ public class PlayerController : MonoBehaviour
 
          
     }
+
+    
+
     public void AddCoin(int cout)
     {
         score+=cout;
@@ -114,6 +114,11 @@ public class PlayerController : MonoBehaviour
         
         currectHealth -= Time.deltaTime * 0.2f;
        warmBar.SetHealth(currectHealth);
+       if (currectHealth <= 0f)
+       {
+           Debug.Log(currectHealth);
+           NoiceMechanics.instance.EndGame();
+       }
     
     }
     public void WarmHeal() // хил 

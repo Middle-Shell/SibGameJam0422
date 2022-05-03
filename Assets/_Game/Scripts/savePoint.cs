@@ -7,15 +7,7 @@ public class savePoint : MonoBehaviour
 {  
     private PlayerController _player;
     private bool fPress,savePointCh=true;
-
-     
-    //  void Update()
-    //  {
-    //      if(Input.GetKeyDown("f"))
-    //         { savePointCh = !savePointCh;}
-    //     if(savePointCh==false)
-    //         {StopAllCoroutines();}
-    //  }
+    
    
     private void OnTriggerStay2D(Collider2D collision)
     {

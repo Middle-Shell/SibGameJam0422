@@ -185,6 +185,7 @@ MonoBehaviour:
   distance: 10
   _speed: 2
   _isButtonDown: 0
+  _audioSource: {fileID: 0}
   parts:
   - {fileID: 3137727549127618422}
   - {fileID: 3137727547978179279}
@@ -202,6 +203,15 @@ MonoBehaviour:
   score: 0
   maxHealth: 10
   currectHealth: 0
+  _ring: {fileID: 0}
+  _battery: {fileID: 0}
+  Bears: []
+  SocketOff: {fileID: 0}
+  SocketOn: {fileID: 0}
+  Cookie: {fileID: 0}
+  CookieOnBed: {fileID: 0}
+  mouses: {fileID: 0}
+  mousesArray: []
   rb2D: {fileID: 3137727547836278784}
 --- !u!233 &3137727547836278789
 HingeJoint2D:
@@ -244,7 +254,7 @@ DistanceJoint2D:
   m_Anchor: {x: -0.64490914, y: -1.0569559}
   m_ConnectedAnchor: {x: 0.5777191, y: -0.07190989}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9227222
+  m_Distance: 5.333337
   m_MaxDistanceOnly: 1
 --- !u!232 &3137727547836278787
 DistanceJoint2D:
@@ -263,7 +273,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0.53516203, y: -1.072524}
   m_ConnectedAnchor: {x: -0.8245351, y: 0.043145742}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.84469086
+  m_Distance: 4.8823137
   m_MaxDistanceOnly: 1
 --- !u!81 &8768505607184764008
 AudioListener:
@@ -423,7 +433,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.107916765, y: 1.7266756}
-  m_ConnectedAnchor: {x: -0.20899773, y: -1.4252988}
+  m_ConnectedAnchor: {x: -0.2089994, y: -1.4252981}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -582,7 +592,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.013489723, y: 1.7536564}
-  m_ConnectedAnchor: {x: 0.015416827, y: -1.138679}
+  m_ConnectedAnchor: {x: 0.015417185, y: -1.1386787}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -865,7 +875,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.18500103, y: 1.9733479}
-  m_ConnectedAnchor: {x: 0.046656474, y: -0.6066513}
+  m_ConnectedAnchor: {x: 0.046656974, y: -0.60665}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -948,6 +958,7 @@ GameObject:
   - component: {fileID: 3137727549127618378}
   - component: {fileID: 3137727549127618377}
   - component: {fileID: 3137727549127618379}
+  - component: {fileID: 5124963913288774709}
   - component: {fileID: 3137727549127618376}
   m_Layer: 0
   m_Name: Segment (1)
@@ -1071,6 +1082,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.949986, y: 3.410448}
   m_EdgeRadius: 0.03
+--- !u!114 &5124963913288774709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3137727549127618422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11fd6c2d338ef4e4a953d7f1428099e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!233 &3137727549127618376
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -1086,7 +1109,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.1340912, y: 1.8296957}
-  m_ConnectedAnchor: {x: 0.048766818, y: -1.5046597}
+  m_ConnectedAnchor: {x: 0.04876703, y: -1.5046605}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1244,7 +1267,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.4388584, y: 4.191094}
-  m_ConnectedAnchor: {x: -0.40708542, y: -1.5609633}
+  m_ConnectedAnchor: {x: -0.40708458, y: -1.5609598}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1403,7 +1426,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.107916765, y: 1.7266756}
-  m_ConnectedAnchor: {x: -0.123740606, y: -1.3647162}
+  m_ConnectedAnchor: {x: -0.12374101, y: -1.3647188}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1562,7 +1585,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.18500103, y: 1.9733479}
-  m_ConnectedAnchor: {x: -0.111875534, y: -0.92331886}
+  m_ConnectedAnchor: {x: -0.111875236, y: -0.92331845}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
