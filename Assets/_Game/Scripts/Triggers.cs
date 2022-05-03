@@ -83,10 +83,9 @@ public class Triggers : MonoBehaviour
                 
             }
         }
-        if (other.tag == "Exit" && _ring.activeSelf)
+        if ((other.tag == "Exit" && _ring.activeSelf) || (other.tag == "Exit" && !Clock.activeSelf))
         {
-            BlackScreen.instance.Blackscreen();
-            SceneManager.LoadScene(0);
+            NoiceMechanics.instance.Finish(_ring.activeSelf);
         }
     }
 }

@@ -114,6 +114,11 @@ public class PlayerController : MonoBehaviour
         
         currectHealth -= Time.deltaTime * 0.2f;
        warmBar.SetHealth(currectHealth);
+       if (currectHealth <= 0f)
+       {
+           Debug.Log(currectHealth);
+           NoiceMechanics.instance.EndGame();
+       }
     
     }
     public void WarmHeal() // хил 
