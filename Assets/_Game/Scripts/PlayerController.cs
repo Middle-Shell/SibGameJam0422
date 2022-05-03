@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool _isButtonDown = false;
     
+    [SerializeField]
+    private AudioSource _audioSource;
+    
     private Vector3 _offset;
     private float _distanceToPoint;
    
@@ -57,6 +60,7 @@ public class PlayerController : MonoBehaviour
          if (Input.GetMouseButtonDown(0))
          {
              _isButtonDown = true;
+             _audioSource.Play();
          }
 
          if (Input.GetMouseButtonUp(0))
@@ -64,6 +68,7 @@ public class PlayerController : MonoBehaviour
          
          if (_isButtonDown)
          {
+             
              //move
              Vector3 mousePosition = Input.mousePosition; 
              
@@ -84,6 +89,10 @@ public class PlayerController : MonoBehaviour
              float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg - 90f;
         
              transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+         }
+         else
+         {
+             _audioSource.Stop();
          }
          Freeze();
          

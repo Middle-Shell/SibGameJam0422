@@ -19,7 +19,6 @@ public class savePoint : MonoBehaviour
    
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("heeeeeey");
         StopCoroutine(HealCoroutine());
         if(collision.tag == "Player" && savePointCh==true)
         {   
