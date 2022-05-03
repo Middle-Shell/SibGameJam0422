@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     {
        currectHealth = maxHealth;
        warmBar.SetHealth(maxHealth);
+       AudioManager.instance.PlayMusic();
 	
     }
     private void Update()

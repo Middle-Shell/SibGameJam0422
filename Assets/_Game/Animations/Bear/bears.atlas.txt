@@ -1,0 +1,62 @@
+
+bears.png
+size: 1730,1377
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bear1
+  rotate: false
+  xy: 807, 2
+  size: 704, 592
+  orig: 704, 613
+  offset: 0, 21
+  index: -1
+bear1hand
+  rotate: true
+  xy: 333, 140
+  size: 284, 258
+  orig: 284, 258
+  offset: 0, 0
+  index: -1
+bear1head
+  rotate: false
+  xy: 1513, 372
+  size: 195, 222
+  orig: 195, 222
+  offset: 0, 0
+  index: -1
+bear1leg
+  rotate: true
+  xy: 2, 78
+  size: 346, 329
+  orig: 346, 329
+  offset: 0, 0
+  index: -1
+bear2
+  rotate: true
+  xy: 2, 426
+  size: 949, 803
+  orig: 949, 803
+  offset: 0, 0
+  index: -1
+bear3
+  rotate: false
+  xy: 807, 596
+  size: 921, 779
+  orig: 921, 779
+  offset: 0, 0
+  index: -1
+bear3 ring
+  rotate: false
+  xy: 1513, 103
+  size: 200, 126
+  orig: 200, 126
+  offset: 0, 0
+  index: -1
+bearl leg 2
+  rotate: true
+  xy: 1513, 231
+  size: 139, 187
+  orig: 139, 191
+  offset: 0, 0
+  index: -1

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Spine.Unity;
 
 public class Mouse : MonoBehaviour
 {
@@ -14,18 +15,23 @@ public class Mouse : MonoBehaviour
     private float _power = 5f;
     [SerializeField]
     private float _timeRepeat = 0.2f;
-
+    public SkeletonAnimation skeletonAnimation;
+    private bool move = true;
+    
     private bool _start = false;
 
     private void Update()
     {
-        transform.position += new Vector3(_walkSpeedX * Time.deltaTime, _walkSpeedY * Time.deltaTime, 0f);
+        if(move)
+            transform.position += new Vector3(_walkSpeedX * Time.deltaTime, _walkSpeedY * Time.deltaTime, 0f);
     }
     
     void OnCollisionEnter2D(Collision2D collision)
     {
         _walkSpeedX *= -1;
         _walkSpeedY *= -1;
+        Vector3 scale = transform.localScale;
+        transform.localScale = new Vector3(scale.x * -1f, scale.y, scale.z);
     }
     
     void OnTriggerEnter2D(Collider2D col)
@@ -39,6 +45,8 @@ public class Mouse : MonoBehaviour
         {
             StopAllCoroutines();
             _start = !_start;
+            skeletonAnimation.AnimationName = "Walking";
+            move = true;
         }
     }
 
@@ -46,7 +54,9 @@ public class Mouse : MonoBehaviour
     {
         if (other.tag == "Player" && !_start)
         {
+            skeletonAnimation.AnimationName = "Scream proceed";
             StartCoroutine(NoiceCoroutine());
+            move = false;
             _start = !_start;
         }
     }
