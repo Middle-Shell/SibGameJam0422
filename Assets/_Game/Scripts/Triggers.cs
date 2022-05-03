@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Triggers : MonoBehaviour
 {
     [SerializeField] private GameObject _ring;
@@ -15,6 +15,7 @@ public class Triggers : MonoBehaviour
     [SerializeField] private GameObject mouses;
     [SerializeField] private List<GameObject> mousesArray = new List<GameObject>();
     [SerializeField] private GameObject Clock;
+    [SerializeField] private GameObject Freeze;
     private void OnTriggerStay2D(Collider2D other)
     {
         if (Input.GetKeyDown("f"))
@@ -38,6 +39,7 @@ public class Triggers : MonoBehaviour
                     Bears[2].SetActive(true);
                     AudioManager.instance.PlaySound("Bear3");
                     _isBattery = false;
+                    Clock.SetActive(false);
                 }
             }
 
@@ -45,6 +47,7 @@ public class Triggers : MonoBehaviour
             {
                 SocketOff.SetActive(true);
                 SocketOn.SetActive(false);
+                Freeze.SetActive(false); 
             }
             
             if (other.tag == "Bed")
@@ -74,8 +77,12 @@ public class Triggers : MonoBehaviour
                 Bears[2].SetActive(false);
                 Bears[3].SetActive(true);
                 AudioManager.instance.PlaySound("Bear2");
-                Clock.SetActive(false);
+                
             }
+        }
+        if (other.tag == "Exit" || _ring.activeSelf)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

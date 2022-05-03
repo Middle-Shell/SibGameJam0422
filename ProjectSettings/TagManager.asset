@@ -13,6 +13,7 @@ TagManager:
   - Bed
   - Bear
   - Ring
+  - Exit
   layers:
   - Default
   - TransparentFX

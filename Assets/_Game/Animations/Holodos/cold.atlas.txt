@@ -1,0 +1,47 @@
+
+cold.png
+size: 2030,1286
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+freez2
+  rotate: false
+  xy: 2, 157
+  size: 1296, 1127
+  orig: 1296, 1127
+  offset: 0, 0
+  index: -1
+freezemain
+  rotate: false
+  xy: 1300, 2
+  size: 557, 428
+  orig: 557, 428
+  offset: 0, 0
+  index: -1
+sneginkji
+  rotate: false
+  xy: 1300, 432
+  size: 728, 347
+  orig: 728, 347
+  offset: 0, 0
+  index: -1
+snejinki2
+  rotate: false
+  xy: 1300, 781
+  size: 615, 503
+  orig: 615, 503
+  offset: 0, 0
+  index: -1
+
+cold2.png
+size: 1259,1105
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+freez1
+  rotate: false
+  xy: 2, 2
+  size: 1255, 1101
+  orig: 1255, 1101
+  offset: 0, 0
+  index: -1
