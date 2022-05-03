@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
     void Freeze()//постоянный урон
     {   
         
-        currectHealth -= Time.deltaTime * 0.5f;
+        currectHealth -= Time.deltaTime * 0.2f;
        warmBar.SetHealth(currectHealth);
     
     }
