@@ -83,7 +83,7 @@ public class Triggers : MonoBehaviour
                 
             }
         }
-        if ((other.tag == "Exit" && _ring.activeSelf) || (other.tag == "Exit" && !Clock.activeSelf))
+        if ((other.tag == "Exit" && _ring.activeSelf) || (other.tag == "Exit" && !Clock.activeSelf && Bears[2].activeSelf))
         {
             NoiceMechanics.instance.Finish(_ring.activeSelf);
         }

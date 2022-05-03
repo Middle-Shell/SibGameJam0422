@@ -65,9 +65,10 @@ public class NoiceMechanics : MonoBehaviour
     public void Finish(bool ring)
     {
         if(ring)
-            NoRing.SetActive(true);
+            WithRing.SetActive(true);
         else
             NoRing.SetActive(true);
+        Finish();
     }
 
     private IEnumerator Finish()
