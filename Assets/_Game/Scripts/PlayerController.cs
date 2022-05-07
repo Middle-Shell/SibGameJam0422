@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public int score;
     public float maxHealth = 10f; // min max
     public float currectHealth;
+    public float healPerSec=0.03f,reezeConst=0.03f;
 
     
 //_______________________________________________________________________________________________________________________________________________________
@@ -112,7 +113,7 @@ public class PlayerController : MonoBehaviour
     void Freeze()//постоянный урон
     {   
         
-        currectHealth -= Time.deltaTime * 0.2f;
+        currectHealth -= Time.deltaTime * reezeConst;
        warmBar.SetHealth(currectHealth);
        if (currectHealth <= 0f)
        {
@@ -125,7 +126,7 @@ public class PlayerController : MonoBehaviour
     {  
         if(currectHealth<maxHealth)
         {
-        currectHealth +=  0.03f;
+        currectHealth +=  healPerSec;
         warmBar.SetHealth(currectHealth);
         }
     }
